@@ -2,7 +2,7 @@
 from setuptools import setup
 setup(
     name="barre",
-    version="1.0.7",
+    version="1.0.8",
     py_modules=["barre"],
     description="Minimal progress bar",
     long_description=open('README.md').read(),
