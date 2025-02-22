@@ -35,11 +35,17 @@ jobs:
           rm -rf build/ dist/ *.egg-info/
           find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
           
+      - name: Install test dependencies
+        run: pip install pytest pytest-cov
+          
       - name: Quality checks
         run: |
           python -c "import barre; assert hasattr(barre, 'b'), 'Missing main function'"
           python -c "import os; assert os.path.getsize('barre.py') < 1024, 'File size exceeds 1KB'"
           
-      - name: Functional test
-        run: |
-          python -c "from barre import b; assert list(b(range(3))) == [0,1,2], 'Basic iteration failed'"
+      - name: Run tests
+        run: pytest --cov=barre test_barre.py
+        
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
