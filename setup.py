@@ -9,7 +9,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Fonk",
     author_email="feelthefonk@gmail.com",
-    url="https://github.com/yourusername/barre",
+    url="https://github.com/FeelTheFonk/barre",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

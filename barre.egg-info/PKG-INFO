@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: barre
+Version: 1.0.0
+Summary: Minimal progress bar
+Home-page: https://github.com/FeelTheFonk/barre
+Author: Fonk
+Author-email: feelthefonk@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# barre
+
+Minimal progress bar, one line to rule them all.
+
+```python
+from barre import b
+
+for x in b(range(100)): ...
+```
+
+Output:
+```
+[||||||||||||||||                    ] 123/300
+```
+
+That's all.

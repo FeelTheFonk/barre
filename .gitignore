@@ -4,5 +4,6 @@ __pycache__/
 venv/
 .vscode/
 .idea/
+barre.egg-info/
 .DS_Store
 Thumbs.db
