@@ -4,6 +4,18 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
     labels:
       - "ci"
       - "dependencies"
+    reviewers:
+      - "FeelTheFonk"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "actions/*"
+        update-types: ["version-update:semver-patch"]

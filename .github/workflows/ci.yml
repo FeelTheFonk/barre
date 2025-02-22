@@ -1,23 +1,45 @@
 name: CI
-on: [push, pull_request]
+
+on: 
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '*.md'
+      - 'LICENSE'
+      - '.gitignore'
+  pull_request:
+    branches: [ main ]
+
 jobs:
   test:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13"]
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
       
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           
-      - name: Clean build files
+      - name: Clean build artifacts
+        shell: bash
         run: |
           rm -rf build/ dist/ *.egg-info/
-          find . -type d -name "__pycache__" -exec rm -rf {} +
+          find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
           
-      - name: Basic import test
+      - name: Quality checks
         run: |
-          python -c "from barre import b; list(b(range(3)));"
+          python -c "import barre; assert hasattr(barre, 'b'), 'Missing main function'"
+          python -c "import os; assert os.path.getsize('barre.py') < 1024, 'File size exceeds 1KB'"
+          
+      - name: Functional test
+        run: |
+          python -c "from barre import b; assert list(b(range(3))) == [0,1,2], 'Basic iteration failed'"
