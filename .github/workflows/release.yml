@@ -40,6 +40,17 @@ jobs:
             exit 1
           fi
       
+      - name: Verify minimal package
+        run: |
+          if [[ ! -f "barre.py" ]]; then
+            echo "Missing barre.py"
+            exit 1
+          fi
+          if [[ $(wc -c < barre.py) -gt 1024 ]]; then
+            echo "barre.py exceeds 1KB"
+            exit 1
+          fi
+      
       - name: Build package
         run: python -m build
       
@@ -49,6 +60,10 @@ jobs:
             echo "Package size exceeds 50KB"
             exit 1
           fi
+      
+      - name: Check package content
+        run: |
+          unzip -l dist/*.whl | grep -q "barre.py" || (echo "barre.py missing from wheel" && exit 1)
       
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
