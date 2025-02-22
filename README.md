@@ -7,31 +7,41 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight progress bar. One line, zero config, zero dependencies.
+
+# ![Demo](demo.gif)
+
 </div>
 
----
-
 ## Install
+
 ```bash
 pip install barre
 ```
 
 ## Usage
+
+Simple and intuitive:
+
 ```python
 from barre import b
-from time import sleep  # for demo purpose
+from time import sleep
 
 # Simple iteration
 for x in b(range(100)):
-    sleep(0.1)  # simulate work
+    sleep(0.1)  # your work here
 
 # With any iterable
 items = ["item1", "item2", "item3"]
 for x in b(items):
-    sleep(0.1)  # your actual work here
+    process(x)
 ```
 
-## Examples
+Output:
+```
+[||||||||||||||||||||||||||||||||||||||||] 50/100
+```
+
+## Real-world Examples
 
 ### Processing Files
 ```python
@@ -104,10 +114,15 @@ for epoch in b(range(epochs)):
 ```
 
 ## Features
-- Single file (<1KB)
-- Zero dependencies
-- No configuration needed
-- Clean ASCII progress display
+
+- **Minimal**: Single file (<1KB)
+- **Fast**: Zero dependencies
+- **Simple**: No configuration needed
+- **Clean**: Professional ASCII output
+- **Universal**: Works with any iterable
 
 ## License
-MIT
+
+[MIT](LICENSE)
+
+---
