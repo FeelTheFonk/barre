@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![PyPI version](https://badge.fury.io/py/barre.svg)](https://badge.fury.io/py/barre)
+[![PyPI version](https://badge.fury.io/py/barre.svg?icon=si%3Apython&icon_color=%2354cf73)](https://badge.fury.io/py/barre)
 [![CI](https://github.com/FeelTheFonk/barre/workflows/CI/badge.svg)](https://github.com/FeelTheFonk/barre/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
