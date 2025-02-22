@@ -1,4 +1,3 @@
-# test_barre.py
 import pytest
 from barre import b
 import io

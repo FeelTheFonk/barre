@@ -1,4 +1,3 @@
-# barre.py
 import sys,time
 def b(i):
  t=len(i);s=str(t)

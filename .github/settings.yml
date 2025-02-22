@@ -1,6 +1,6 @@
 repository:
   name: barre
-  description: Minimal progress bar for Python
+  description: Minimal progress bar
   private: false
   has_issues: true
   has_projects: false
