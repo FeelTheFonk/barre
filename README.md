@@ -8,20 +8,17 @@
 
 A lightweight progress bar. One line, zero config, zero dependencies.
 
-# [![Demo](demo.gif)](https://github.com/FeelTheFonk/barre/blob/main/demo.gif)
+[![Demo](https://raw.githubusercontent.com/FeelTheFonk/barre/main/demo.gif)](https://github.com/FeelTheFonk/barre)
 
 </div>
 
 ## Install
-
 ```bash
 pip install barre
 ```
 
 ## Usage
-
 Simple and intuitive:
-
 ```python
 from barre import b
 from time import sleep
@@ -82,7 +79,6 @@ import pandas as pd
 df = pd.read_csv("large_file.csv")
 chunk_size = 1000
 chunks = [df[i:i+chunk_size] for i in range(0, len(df), chunk_size)]
-
 results = []
 for chunk in b(chunks):
     result = chunk.groupby('category').sum()
@@ -114,7 +110,6 @@ for epoch in b(range(epochs)):
 ```
 
 ## Features
-
 - **Minimal**: Single file (<1KB)
 - **Fast**: Zero dependencies
 - **Simple**: No configuration needed
@@ -122,7 +117,10 @@ for epoch in b(range(epochs)):
 - **Universal**: Works with any iterable
 
 ## License
-
 [MIT](LICENSE)
 
 ---
+
+<div align="center">
+Made with pragmatism in France 🇫🇷
+</div>
