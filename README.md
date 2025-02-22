@@ -41,6 +41,3 @@ Output:
 
 ## License
 MIT
-
----
-Built with minimalism in France 🇫🇷
