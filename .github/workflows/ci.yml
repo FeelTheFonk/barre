@@ -47,5 +47,5 @@ jobs:
         run: pytest --cov=barre test_barre.py
         
       - name: Upload coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
