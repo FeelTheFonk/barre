@@ -8,7 +8,7 @@
 
 A lightweight progress bar. One line, zero config, zero dependencies.
 
-# ![Demo](demo.gif)
+# [![Demo](demo.gif)](https://github.com/FeelTheFonk/barre/blob/main/demo.gif)
 
 </div>
 
